@@ -1,0 +1,55 @@
+Installing SDKMAN!, Setting Up Java 21, and Running Java 21 Code
+
+1. Install SDKMAN!
+
+Open your terminal and run:
+curl -s "https://get.sdkman.io" | bash
+
+After installation, load SDKMAN! into your shell session:
+source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+Verify SDKMAN! is installed:
+sdk version
+
+2. Install Java 21 Using SDKMAN!
+
+List available Java versions:
+sdk list java
+Look for a version like 21.0.7-tem.
+
+Install Java 21:
+sdk install java 21.0.7-tem
+
+Set Java 21 as your global default (optional):
+sdk default java 21.0.7-tem
+
+3. Configure Java 21 Per Project with .sdkmanrc
+
+Navigate to your project folder:
+cd /path/to/your/project
+
+Initialize .sdkmanrc:
+sdk env init
+
+Edit .sdkmanrc:
+vi .sdkmanrc
+
+Add this line:
+java=21.0.7-tem
+
+Activate Java 21 in the current shell:
+sdk env
+
+Enable automatic environment switching (optional):
+sdk config
+
+Set this value in the config:
+sdkman_auto_env=true
+
+4. Verify Java Version in Project
+
+Check Java version:
+java -version
+You should see:
+openjdk version "21.0.7"
+OpenJDK Runtime Environment Temurin-21.0.7+...
